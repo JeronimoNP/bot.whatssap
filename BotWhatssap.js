@@ -39,7 +39,7 @@ client.on('message', async (message) => {
       let videoTitle = info.videoDetails.title;
       let videoStream = ytdl(videoUrl);
     
-      const baseDir = '/home/cloudshell-user/bot.whatssap/videosbaixados'; // Diretório base onde o arquivo será salvo
+      const baseDir = 'home/bot.whatssap/videosbaixados'; // Diretório base onde o arquivo será salvo
       const filePath = path.join(baseDir, `${videoTitle.substring(0, 20).replace('|', '')}.mp4`);
     
       videoStream.pipe(fs.createWriteStream(filePath));
