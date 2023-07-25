@@ -54,14 +54,15 @@ client.on('message', async (message) => {
           caption: 'Aqui está, mestre!',
           sendMediaAsDocument: true
         });
+                  deletar(filePath);      //função para deletar arquivo para não ter problema de memoria no futuro!
       });
+
     } catch (error) {
       console.error('Erro ao baixar o vídeo:', error);
       message.reply('Ocorreu um erro ao baixar o vídeo.');
     }
   }
 });
-
 
 
 client.on('message', msg => {
@@ -73,4 +74,15 @@ client.on('message', msg => {
     }
 });
 
+
+function deletar(direct){
+      fs.unlink(direct, (err) => {
+        if (err) {
+          console.error(`Ocorreu um erro ao deletar o arquivo: ${err}`);
+        }
+      });
+}
+
 client.initialize(); 
+          
+
