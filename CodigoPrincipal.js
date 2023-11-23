@@ -1,4 +1,4 @@
-const { Client } = require('whatsapp-web.js');          //Utilizando a api whatsapp-web.js para fazer a ponte do codigo e whatssap
+const { Client, LocalAuth } = require('whatsapp-web.js');          //Utilizando a api whatsapp-web.js para fazer a ponte do codigo e whatssap
 const { MessageMedia } = require('whatsapp-web.js');
 const ytdl = require('ytdl-core');                      //Api para baixar video do youtuber
 const qrcode = require('qrcode-terminal');              //Api para criação do qr code para linkar a conta do whatssap
@@ -6,7 +6,9 @@ const path = require('path');
 const fs = require('fs');
 
 
-const client = new Client();
+const client = new Client({
+  authStrategy: new LocalAuth()
+});
 
 //linkando usuario
 client.on('qr', (qr) => {
@@ -32,14 +34,14 @@ client.on('message', async (message) => {
 
     try {                                         //caso ocorra algum erro ao baixar o video não encerrar o programa      
       const filtro = {
-        quality: '480p',
+        quality: '135'
       };
 
       let info = await ytdl.getInfo(videoUrl, {filter: filtro});
       let videoTitle = info.videoDetails.title;
       let videoStream = ytdl(videoUrl);
     
-      const baseDir = '../videosbaixados'; // Diretório base onde o arquivo será salvo
+      const baseDir = '../bot.whatssap/videosbaixados'; // Diretório base onde o arquivo será salvo
       const filePath = path.join(baseDir, `${videoTitle.substring(0, 20).replace('|', '')}.mp4`);
     
       videoStream.pipe(fs.createWriteStream(filePath));
