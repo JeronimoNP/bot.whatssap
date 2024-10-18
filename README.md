@@ -6,3 +6,5 @@ equipamento e depois enviar para o usuario do outro lado!
 Até o momento ele está bem simples mais funcionando , caso queira usar instale as dependencias é inicie o programa link com o whatssap e pronto!
 <br>
 Caso tenha gostado ou queira dar uma dica de melhoria pode ficar a vontade! ; )
+
+proxima versão utilizar o Baileys para gerenciamento de conta zap.
