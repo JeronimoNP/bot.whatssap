@@ -8,3 +8,4 @@ Até o momento ele está bem simples mais funcionando , caso queira usar instale
 Caso tenha gostado ou queira dar uma dica de melhoria pode ficar a vontade! ; )
 
 proxima versão utilizar o Baileys para gerenciamento de conta zap.
+https://github.com/WhiskeySockets/Baileys
