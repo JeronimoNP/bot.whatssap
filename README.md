@@ -9,3 +9,8 @@ Caso tenha gostado ou queira dar uma dica de melhoria pode ficar a vontade! ; )
 
 proxima versão utilizar o Baileys para gerenciamento de conta zap.
 https://github.com/WhiskeySockets/Baileys
+
+Requisitos:
+            baixar videos do youtuber
+            baixar musicas do youtuber
+            
