@@ -1,10 +1,13 @@
 import { Boom } from '@hapi/boom';
-import makeWASocket, { DisconnectReason, useMultiFileAuthState } from '@whiskeysockets/baileys';
+import makeWASocket, { DisconnectReason, useMultiFileAuthState, WASocket } from '@whiskeysockets/baileys';
+import response from '../Controllers/whatssapResponse';
+
+let sock: WASocket | null = null;
 
 // Função para conectar ao WhatsApp
 export const connectToWhatsApp = async () => {
     const { state, saveCreds } = await useMultiFileAuthState('./auth_info_multi');
-    const sock = makeWASocket({
+    sock = makeWASocket({
         auth: state,
         printQRInTerminal: true
     });
@@ -23,6 +26,7 @@ export const connectToWhatsApp = async () => {
             }
         } else if (connection === 'open') {
             console.log('Conectado ao WhatsApp');
+            response.response(sock);
         }
     });
 
