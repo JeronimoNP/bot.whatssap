@@ -1,4 +1,6 @@
-import startSock from './Controllers/whatsappController';//startSock é a inicialização do bot
+//startSock é a inicialização do bot, que é chamado no index.ts
+import startSock from './Controllers/whatsappController';
+
 
 // Função principal para iniciar o bot
 const startBot = async () => {

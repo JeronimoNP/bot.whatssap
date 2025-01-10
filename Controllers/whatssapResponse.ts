@@ -1,7 +1,8 @@
 import dotenv from 'dotenv';
+const axios = require('axios');
 dotenv.config();
 
-const { NUMBERCEL } = process.env;
+const { NUMBERCEL, PORT } = process.env;
 
 if (!NUMBERCEL) {
     throw new Error('NUMBERCEL is not defined in the environment variables');
@@ -18,7 +19,6 @@ async function response(sock: any) {
             for(const msg of sock.mensagens)
                 if(msg.mensagens){
                     const remoteJid = msg.key.remoteJid
-                    const text = msg.mensagens?.conversation || msg.mensagens?.extendedTextMessage?.text
 
                     if(remoteJid === keyphone.remoteJid){
                         await sock.sendMessage(remoteJid, {text: 'Olá, estou escutando você!'})
@@ -41,17 +41,32 @@ async function escuta(sock: any, state: any) {
     
                             // Adiciona logs adicionais para depuração
                             console.log(`Mensagem recebida de ${remoteJid}: ${text}`)
-    
+                            
                             // Verifica se a mensagem é do próprio número
-                            console.log("\n %s \n",remoteJid)
+                        
                             if (remoteJid === keyphone.remoteJid) {
                                 // Envia uma resposta automática
+                                const text1 = msg.message.conversation
+                                const botResponse = await sendToGPT4All(text1, Number(PORT));
                                 await sock.sendMessage(remoteJid, { text: 'Olá! Esta é uma resposta automática.' })
                             }
                         }
                     }
                 }
             })
+}
+
+async function sendToGPT4All(text: string, PORT: number): Promise<string> {
+    try {
+        const response = await axios.post(`http://localhost:${PORT}/api/generate`, {
+            prompt: text,
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error sending to GPT-4 All:', error);
+        throw error;
+    }
+
 }
 
 export default {
