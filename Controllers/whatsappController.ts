@@ -22,7 +22,7 @@ async function startSock() {
 
         // Verifica se há arquivos de autenticação se não autenticar
         const fs = require('fs')
-        if(fs.readdirSync('../bot.whatssap/auth_info_baileys').length){
+        if(!fs.readdirSync('../bot.whatssap/auth_info_baileys').length){
             // Cria uma nova instância do socket do WhatsApp com autenticação qr-code
             console.log("Não há arquivos de autenticação, Fazendo autenticação")
             const sock = makeWASocket({
@@ -35,7 +35,7 @@ async function startSock() {
             //escuta as conversar e responde
             response.escuta(sock, state)
         }else{
-
+            console.log("estou aqui!, %s", fs.readdirSync('../bot.whatssap/auth_info_baileys').length);
             // Cria uma nova instância do socket do WhatsApp com autenticação ultimo estado
             const sock = makeWASocket({
                 version, // Define a versão do WhatsApp Web
