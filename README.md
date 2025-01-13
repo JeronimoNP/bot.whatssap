@@ -1,21 +1,21 @@
 # bot.whatssap
 
-Criei um bot para WhatsApp para baixar vídeos do YouTube quando mandar um link para ele.
+Modificarei esse projeto com o foco atualmente em saúde, implementarei uma IA com foco na saúde alimentar, dando dicas é ajudando pessoas a planejar sua alimentação.
 
-No momento, utilizei as APIs `whatsapp-web.js` para linkar a conta do WhatsApp e `ytdl-core` para baixar o vídeo no equipamento e depois enviar para o usuário do outro lado. Até o momento, ele está bem simples, mas funcionando. Caso queira usar, instale as dependências e inicie o programa, link com o WhatsApp e pronto!
+No momento, utilizei as APIs `Baileys` para linkar a conta do WhatsApp e `ollama` para executar um modelo de inteligência artifical(treinando ainda um modelo). Até o momento, ele está bem simples não com informações muito confiaveis, mas funcionando, planejo, publicar um modelo já treinado com foco em saúde.
 
-Caso tenha gostado ou queira dar uma dica de melhoria, pode ficar à vontade! 😉
+Caso tenha gostado da iniciativa deixe sua estrelinha é feedback à vontade! 😉
 
 ## Próxima Versão
 
-Na próxima versão, utilizarei o Baileys para gerenciamento de conta no WhatsApp.
-[Baileys GitHub](https://github.com/WhiskeySockets/Baileys)
+Na próxima versão, utilizarei o Baileys para gerenciamento de conta no WhatsApp(✅).
+Implementação de Teste(⏰).
+
 
 ## Requisitos
+Responder informações relacionadas a saúde(✅).
+Informações confiavéis(⏰).
+Testes para garantia de funcionamento do código(⏰).
 
-- Baixar vídeos do YouTube
-- Baixar músicas do YouTube
-
-## Como Usar
-
-1. Clone o repositório:
+## Biblioteca
+[Baileys GitHub](https://github.com/WhiskeySockets/Baileys)
