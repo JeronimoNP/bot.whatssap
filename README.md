@@ -8,14 +8,14 @@ Caso tenha gostado da iniciativa deixe sua estrelinha é feedback à vontade! �
 
 ## Próxima Versão
 
-Na próxima versão, utilizarei o Baileys para gerenciamento de conta no WhatsApp(✅).
+Na próxima versão, utilizarei o Baileys para gerenciamento de conta no WhatsApp(✅). <br/>
 Implementação de Teste(⏰).
 
 
 ## Requisitos
-Responder informações relacionadas a saúde(✅).
-Informações confiavéis(⏰).
-Testes para garantia de funcionamento do código(⏰).
+Responder informações relacionadas a saúde(✅).<br/>
+Informações confiavéis(⏰).<br/>
+Testes para garantia de funcionamento do código(⏰).<br/>
 
 ## Biblioteca
 [Baileys GitHub](https://github.com/WhiskeySockets/Baileys)
