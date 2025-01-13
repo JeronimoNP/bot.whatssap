@@ -1,0 +1,6 @@
+{
+  "watch": ["*.ts", "controllers/**/*.ts"],
+  "ignore": ["auth_info_baileys*", "node_modules/*"],
+  "exec": "ts-node index.ts",
+  "ext": "ts"
+}
